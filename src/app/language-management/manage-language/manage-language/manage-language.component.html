@@ -1,0 +1,11 @@
+<mat-form-field appearance="fill" >
+    <mat-label>{{getSignupForm().title}}</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="langChanged($event.value)" name="list-languages"
+      style="display:flex;align-items: center;">
+      <mat-option *ngFor="let lang of getLanguageList()" value="{{lang.code}}">
+        <mat-icon aria-hidden="false" style="height:auto;margin-right:25px;text-align: center !important;">
+          <img src="https://database.gen.tr/suleyman/2022/dupia_test/country_flags/{{lang.code}}.svg">
+        </mat-icon>{{lang.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>

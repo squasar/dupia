@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+//@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+@import "../node_modules/flag-icon-css/css/flag-icons.min.css";
+@import "../node_modules/flag-icon-css/css/flag-icons.css";
+@import "./assets/css2.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ghost{
+    //it loads the element and makes it invisible... 
+    //-- this trick is very useful when we need to be sure the data is displayed or reached after loaded...
+    visibility: hidden; 
+    opacity: 0.0;
+    display: none;
+    /*Just to be sure...*/
+    position:absolute;
+    left:-999999px;
+}

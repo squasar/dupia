@@ -1,0 +1,96 @@
+<!--
+  ref_link:any;
+  
+  howManyDays:any;
+  birthDay:any;
+
+-->
+
+<div class="card panel"> <!-- style="/*width:30%; height:75%;*/"> -->
+
+  <div class="card-header">
+    <button mat-raised-button color="primary" style="width:100%; height: 100%;">Primary</button>
+  </div>
+
+
+  <div #messageContainer class="container-fluid card-body" style="margin-top: 10px;  overflow-y: scroll; size:fixed; height: 400px;/*height:100%;  overflow-y: scroll;*/">
+
+    
+      
+
+      <div class="row">
+          <div class="col-md-12 px-1 pt-4" style=" text-align: center !important;">
+              <span class="fa fa-star checked"></span>
+              <p style="font-size: 18px !important;"
+                      style="font-size: 18px !important;">
+                      <span #messages *ngFor='let message of messages' (click)='loadDoc(message)'>
+                        <p>{{message.sender_name +": "+ message.content}}</p>
+                      </span>
+                    </p>
+              <span class="fa fa-star checked"></span>
+          </div>
+      </div>
+
+      
+      <div class="row">
+          <span class="fa fa-star checked"></span>
+      </div>
+
+
+      
+  </div>
+
+  <div class="card-footer"  style="overflow-y: scroll;">
+      <div class="container-fluid">
+        
+          <div class="row">
+              <div class="col-md-12">
+               
+                <textarea [(ngModel)]='msg.content' (keyup)="editMessage()" (keyup.enter)='sendMessage()' #myTextArea></textarea>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="container-fluid">
+  <div class="row">
+
+
+      <div class="col-md-12">
+        <span class="panel" *ngFor='let message of messages' (click)='loadDoc(message)'>{{message.content}}</span>
+      </div>
+
+
+  </div>
+  <div class="row">
+    <div class="col-md-12" style="padding-top: 200px !important;">
+      <textarea [(ngModel)]='msg' (keyup.enter)='sendMessage()'></textarea>
+
+    </div>
+  </div>
+</div>
+
+-->

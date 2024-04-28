@@ -1,0 +1,141 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card sending_post_box">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="../../../assets/profile_picture_none.jpg"
+                                class="img-fluid card-img-top post_card_image" alt="..." #realImageProfile>
+                        </div>
+                        <div class="col-md-8 pt-3" style="padding-left:0% !important; ">
+                            <p class="pt-3"
+                                style="display:flex; justify-content: start; margin-left:-20px; font-size: 28px;">
+                                {{user_name}}<span style="padding-left: 22px;">
+                                    {{user_surname}}
+                                </span></p>
+                        </div>
+
+                        <div class="col-md-2" style="padding-right:100%; padding-top:20px;">
+
+                            <mat-form-field appearance="outline">
+                                <!--<mat-label>{{choosenPrivacy?.name}}</mat-label>-->
+                                <mat-label style="display:flex;align-items: center;">
+                                    <mat-icon aria-hidden="false" style="height:auto;">
+                                        <img
+                                            src="https://database.gen.tr/suleyman/2022/dupia_test/privacy_icons/{{choosenPrivacy?.code}}.svg">
+                                    </mat-icon>
+                                    <span style="padding-left: 16px;">
+                                        {{choosenPrivacy?.name}}
+                                    </span>
+
+                                </mat-label>
+                                <mat-select [(value)]="choosenPrivacy" (selectionChange)="privacyChanged($event.value)"
+                                    name="list-privacy" style="display:flex;align-items: center;">
+                                    <mat-option *ngFor="let privacy_option of getPrivacyOptionsList()"
+                                        value="{{privacy_option.code}}">
+                                        <mat-icon aria-hidden="false"
+                                            style="height:auto;margin-right:25px;text-align: center !important;">
+                                            <img
+                                                src="https://database.gen.tr/suleyman/2022/dupia_test/privacy_icons/{{privacy_option.code}}.svg">
+                                        </mat-icon>{{privacy_option.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="card-body py-2" style="height:190px;  overflow-y: scroll;">
+                    <textarea [ngModel]="myTextAreaData" #postTextArea (ngModelChange)="textHasBeenChanged($event)"
+                        class="scr_bar" style="color: rgb(0, 0, 0) !important; 
+                                        background: transparent !important;
+                                        border: none !important;
+                                        outline: none !important;
+                                        height:100% !important; 
+                                        width:100% !important;"></textarea>
+                    <!--
+                            <form (submit)="onPostSubmit()" style="height:100% !important; width:100% !important;">
+                                <mat-form-field [style.fontSize]="18"
+                                    >
+                                    <textarea
+                                        style="color: #FFF !important; 
+                                        background: transparent !important;
+                                        border: none !important;
+                                        outline: none !important;" 
+                                        matInput 
+                                        cdkTextareaAutosize
+                                        #autosize = "cdkTextareaAutosize"
+                                        cdkAutosizeMinRows = "20"
+                                        cdkAutosizeMaxRows = "20"
+                                    ></textarea>
+                                </mat-form-field>
+                            </form>
+                            -->
+
+
+
+
+
+                    <ng-container *ngIf="isPhotoAttached; then photoAdded; else noPhotoAdded">
+                    </ng-container>
+
+                    <ng-template #photoAdded>
+
+                        <!--<p></p><span></span> <br>-->
+                        <p></p><span></span> <br>
+                        <input #postImage type="file" accept="image/*" (change)="imageHasBeenChanged(postImage)" hidden>
+
+                        <img src="../../../assets/profile_picture_none.jpg"
+                            class="img-fluid card-img-top image-upload-container btn btn-bwm"
+                            (click)="setImageViaButton()" alt="..."
+                            style="width:50% !important; height:100% !important; padding-top: 4px !important;"
+                            #sendPostImage>
+
+
+                    </ng-template>
+
+                    <ng-template #noPhotoAdded>
+
+                    </ng-template>
+
+                </div>
+                <div class="card-footer">
+                    <div class="row h-25 w-100">
+                        <div class="col-md-12 d-flex justify-content-around">
+                            <button #postButt class=" btn btn-secondary py-2 w-50"
+                                (click)="onPostSubmit()">{{postButtonText}}</button>
+                            <span class="px-2"></span>
+                            <button class=" btn btn-secondary py-2 w-50" #addPhotoToPostButton
+                                (click)="requestChangePhotoStatus()">
+                                <ng-container
+                                    *ngIf="addPhotoButtonStatus; then photoAlreadyAdded; else noPhotoAlreadyAdded">
+                                </ng-container>
+
+                                <ng-template #photoAlreadyAdded>
+                                    <span>{{addPhotoButtonText}}</span>
+                                </ng-template>
+
+                                <ng-template #noPhotoAlreadyAdded>
+                                    <span>{{deletePhotoButtonText}}</span>
+                                </ng-template>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--
+                            <div class="d-flex justify-content-start w-50 py-2">
+                                <button class=" btn btn-secondary">Post</button>
+                            </div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

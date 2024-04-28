@@ -1,0 +1,278 @@
+<!--<tr *ngFor="let den of deneme; let i = index">
+                <td>{{den}}</td>
+                <td>{{i}}</td>
+            </tr>
+            <tr *ngFor="let deni of deneme; let j = index">
+                <td>{{deni}}</td>
+                <td>{{j}}</td>
+            </tr>-->
+            
+            <!--
+            <tr *ngFor="let sub_member of sub_net; let i = index">
+                <td>{{sub_member}}</td>
+                <td>{{i}}</td>
+            </tr>
+            <tr *ngFor="let top_member of top_net; let j = index">
+                <td>{{top_member}}</td>
+                <td>{{j}}</td>
+            </tr>
+            -->
+
+            <!--
+            <tr *ngFor="let alt_name of alt_names; let i = index">
+                <td>{{" Alt Name: "+alt_name}}</td>
+                <td>{{" Alt Name Indis : "+i}}</td>
+            </tr>
+            <tr *ngFor="let ust_name of ust_names; let j = index">
+                <td>{{" Ust Name: "+ust_name}}</td>
+                <td>{{" Ust Name Indis: "+j}}</td>
+            </tr>
+            -->
+
+            <!--
+            <tr *ngFor="let alt_user of alt_users; let i = index">
+                <td>{{" Alt Name: "+alt_user.name}}</td>
+                <td>{{" Alt Name Indis : "+i}}</td>
+            </tr>
+            <tr *ngFor="let ust_user of ust_users; let j = index">
+                <td>{{" Ust Name: "+ust_user.name}}</td>
+                <td>{{" Ust Name Indis: "+j}}</td>
+            </tr>
+            -->
+
+<div class="container w-100 h-50 py-5" style="margin-left: 0px;">
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row">
+            <div class="col-md-12 py-1">
+                <span class="fa fa-star checked"></span>
+                <p style="font-size: 64px;color:rgb(84, 52, 161);"><strong>{{"Top Network"}}</strong>
+                </p>
+                <span class="fa fa-star checked"></span>
+            </div>
+        </div>
+        <div class="row" style="padding:1%;height: 100%;">
+            <div class="col-md-12 py-1" style="display: flex;">
+                <span class="fa fa-star checked"></span>
+
+                <div class="grid-container" style="display: flex;">
+                    <div class="grid-item" style="min-width: 400px;" *ngFor="let ust_user of ust_users; let i = index">
+
+                        <div class="card" style="height:100%;">
+
+                            <div class="card-header">
+                                <img src="{{ust_user.photo}}"
+                                    class="img-fluid card-img-top card__image" alt="..." #realImageRelatedTop>
+                                
+                                <!--
+                                <img src="../../../assets/profile_picture_none.jpg"
+                                    class="img-fluid card-img-top card__image" alt="..." #realImageRelatedTop>-->
+                            </div>
+
+                            <div class="container-fluid card-body"
+                                style="margin-top: 10px; /*height:100%;  overflow-y: scroll;*/">
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-3" style=" text-align: center !important;">
+                                        <hr style="border:3px solid #4c00ff">
+                                        <span class="fa fa-star checked"></span>
+                                        <p style="font-size: 25px;color:aqua;"><strong>{{ust_user.point}}</strong>{{"
+                                            DUPY"}}</p>
+                                        <span class="fa fa-star checked"></span>
+                                        <hr style="border:3px solid #4c00ff">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-3" style=" text-align: center !important;">
+                                        <span class="heading"
+                                            style=" font-size: 50px !important;"><strong>{{ust_user.name}}</strong></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-3" style=" text-align: center !important;">
+                                        <span class="heading"
+                                            style=" font-size: 50px !important;"><strong>{{ust_user.surname}}</strong></span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-1" style=" text-align: center !important;">
+                                        <span class="fa fa-star checked"></span>
+                                        <p style="font-size: 18px !important;"><span class="heading"
+                                                style="font-size: 18px !important;"><strong>{{ust_user.phone}}</strong></span>
+                                        </p>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row ">
+
+                                    <div class="grid-container w-100">
+                                        <div class="grid-item">
+                                            <p><span class="grid-aciklama-soru">{{"Generation"}}</span></p>
+                                            <p></p>
+                                            <p><span class="grid-aciklama-cevap">{{ust_user.generation}}</span></p>
+                                            <p></p>
+                                        </div>
+
+                                        <div class="grid-item">
+                                            <p><span class="grid-aciklama-soru">{{"Nickname"}}</span></p>
+                                            <p></p>
+                                            <p><span class="grid-aciklama-cevap">{{ust_user.nickname}}</span></p>
+                                            <p></p>
+                                        </div>
+                                        <div class="grid-item">
+                                            <p><span class="grid-aciklama-soru">{{"City"}}</span></p>
+                                            <p></p>
+                                            <p><span class="grid-aciklama-cevap">{{ust_user.city}}</span></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <hr style="border:3px solid #f1f1f1">
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <span class="fa fa-star checked"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container w-100 h-50 py-5" style="margin-left: 0px;">
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row">
+            <div class="col-md-12 py-1">
+                <span class="fa fa-star checked"></span>
+                <p style="font-size: 64px;color:rgb(84, 52, 161);"><strong>{{"Sub Network"}}</strong>
+                </p>
+                <span class="fa fa-star checked"></span>
+            </div>
+        </div>
+
+
+        
+
+
+
+
+
+
+
+        <div class="row" style="padding:1%;height: 100%;">
+            <div class="col-md-12 py-1" style="display: flex;">
+                <span class="fa fa-star checked"></span>
+
+                <div class="grid-container" style="display: flex;">
+                    <div class="grid-item" style="min-width: 400px;" *ngFor="let alt_user of alt_users; let i = index">
+
+                        <div class="card" style="height:100%;">
+
+                            <div class="card-header">
+
+                                <img src="{{alt_user.photo}}"
+                                    class="img-fluid card-img-top card__image" alt="..." #realImageRelatedSub>
+                                
+                                <!--
+                                <img src="../../../assets/profile_picture_none.jpg"
+                                    class="img-fluid card-img-top card__image" alt="..." #realImageRelatedSub>-->
+                            </div>
+
+                            <div class="container-fluid card-body"
+                                style="margin-top: 10px; /*height:100%;  overflow-y: scroll;*/">
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-3" style=" text-align: center !important;">
+                                        <hr style="border:3px solid #4c00ff">
+                                        <span class="fa fa-star checked"></span>
+                                        <p style="font-size: 25px;color:aqua;"><strong>{{alt_user.point}}</strong>{{"
+                                            DUPY"}}</p>
+                                        <span class="fa fa-star checked"></span>
+                                        <hr style="border:3px solid #4c00ff">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-3" style=" text-align: center !important;">
+                                        <span class="heading"
+                                            style=" font-size: 50px !important;"><strong>{{alt_user.name}}</strong></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-3" style=" text-align: center !important;">
+                                        <span class="heading"
+                                            style=" font-size: 50px !important;"><strong>{{alt_user.surname}}</strong></span>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12 px-1 py-1" style=" text-align: center !important;">
+                                        <span class="fa fa-star checked"></span>
+                                        <p style="font-size: 18px !important;"><span class="heading"
+                                                style="font-size: 18px !important;"><strong>{{alt_user.phone}}</strong></span>
+                                        </p>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                </div>
+
+                                <div class="row ">
+
+                                    <div class="grid-container w-100">
+                                        <div class="grid-item">
+                                            <p><span class="grid-aciklama-soru">{{"Generation"}}</span></p>
+                                            <p></p>
+                                            <p><span class="grid-aciklama-cevap">{{alt_user.generation}}</span></p>
+                                            <p></p>
+                                        </div>
+
+                                        <div class="grid-item">
+                                            <p><span class="grid-aciklama-soru">{{"Nickname"}}</span></p>
+                                            <p></p>
+                                            <p><span class="grid-aciklama-cevap">{{alt_user.nickname}}</span></p>
+                                            <p></p>
+                                        </div>
+                                        <div class="grid-item">
+                                            <p><span class="grid-aciklama-soru">{{"City"}}</span></p>
+                                            <p></p>
+                                            <p><span class="grid-aciklama-cevap">{{alt_user.city}}</span></p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <hr style="border:3px solid #f1f1f1">
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <span class="fa fa-star checked"></span>
+            </div>
+        </div>
+    </div>
+</div>

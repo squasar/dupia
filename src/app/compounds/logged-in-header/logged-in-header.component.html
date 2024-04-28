@@ -1,0 +1,81 @@
+<!--color="primary"
+
+#2b4354
+#a7bac6
+-->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="container-fluid">
+
+    <div class="row">
+        <mat-toolbar style="color:#5243c4; background-color: #a7bac6; margin-top: 0% !important;">
+            <div class="col-md-12" style="display:flex;justify-content: end;">
+                <app-manage-language style="margin-top:2%; margin-right: -2%;"></app-manage-language>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="row">
+
+
+        <span style="/* max-width: 150px; */position: absolute;left: 10px;top: 50px;z-index: 999;width: 250px;">
+            <a class="brand-logo" routerLink="/timeline"><img src="assets/logo_svg.svg" class="img-fluid"
+                    style="background-color: #a7bac6;width: 100%;"></a>
+        </span>
+
+    </div>
+
+    <div class="row">
+        <mat-toolbar style="color:#5243c4; background-color: #a7bac6; margin-top: -1.5% !important;">
+            <div class="col-md-8" style="display:flex;justify-content: start;margin-left: 20%;">
+
+
+
+
+                <button mat-fab extended (click)="goToMyDashboard($event)" color="aqua" style="color:#5243c4;"
+                    aria-label="Example icon-button with a heart icon">
+                    <mat-icon style="width:36px; height:36px; font-size: 36px; margin-left: 8px;">home</mat-icon>
+                </button>
+
+                <button mat-fab extended (click)="goToMyNetwork($event)" color="aqua"
+                    style="color:#5243c4; margin-left: 32px;" aria-label="Example icon-button with a heart icon">
+                    <mat-icon style="width:36px; height:36px; font-size: 36px; margin-left: 2px;">link</mat-icon>My
+                    Network
+                </button>
+
+                <button mat-fab extended (click)="goToMyProfile($event)" color="aqua"
+                    style="color:#5243c4; margin-left: 32px;" aria-label="Example icon-button with a heart icon">
+                    <mat-icon
+                        style="width:36px; height:36px; font-size: 36px; margin-left: 2px;">account_circle</mat-icon>My
+                    Profile
+                </button>
+                <button mat-fab extended color="aqua" style="color:#5243c4; margin-left: 216px;"
+                    aria-label="Example icon-button with a heart icon">
+                    <mat-icon
+                        style="width:36px; height:36px; font-size: 36px; margin-left: 8px;">notifications_active</mat-icon>
+                </button>
+                <button mat-fab extended (click)="goOut($event)" color="aqua" style="color:#5243c4; margin-left: 32px;"
+                    aria-label="Example icon-button with a heart icon">
+
+                    <mat-icon
+                        style="width:36px; height:36px; font-size: 36px; margin-left: 8px;">power_settings_new</mat-icon>
+                </button>
+            </div>
+
+
+
+
+
+
+
+            <!--
+
+                <button mat-icon-button style="margin-right: 8px;">
+                    <mat-icon mat-icon-button  style="color:rgb(16, 190, 203)" class="mat-icon-logged">account_circle</mat-icon>
+                </button>
+                -->
+
+        </mat-toolbar>
+    </div>
+</div>

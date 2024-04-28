@@ -1,0 +1,344 @@
+<div #klein class="signup-inner text-center" >
+    <h5 class="title">{{signup_form.text_on_form_header}}</h5>
+    
+    <form cdkScrollable #sampleForm name="form" flex layout="column" class="signup-inner--form" (ngSubmit)="onSubmit()" #register="ngForm" novalidate
+      style="color: purple !important; ">
+      
+      
+      <div class="row makeScrollable">
+  
+  
+        <div class="row" >
+          <div class="col-md-3 form-group">
+          </div>
+          <div class="col-md-6 form-group">
+            <input disabled #in_field type="text"  placeholder={{registered_parent_id}} class="form-control single-field"
+              oninput="this.value = this.value.toUpperCase()" name="reference_id"
+              [(ngModel)]="registered_user.ref_id_for_real" required minlength="8" maxlength="8" #reference_id="ngModel"
+              style="width: fit-content !important; color: rgb(0, 0, 0) !important;" />
+            <div *ngIf="reference_id.errors && reference_id.errors['minlength'] && reference_id.errors['required']" class="warning">
+              <div class="uyari" style="color: rgb(53, 0, 53) !important;">{{signup_form.reference_min_warning}}</div>
+            </div>
+          </div>
+          <div class="col-md-3 form-group">
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="date" placeholder={{signup_form.birthday}} class="form-control single-field" name="birthDay"
+              style="color: rgb(0, 0, 0) !important;" [(ngModel)]="registered_user.birth_day" required
+              #birthDay="ngModel" />
+            <div *ngIf="(birthDay.touched)">
+              <div *ngIf="birthDay.errors && birthDay.errors['required']" class="danger">
+                <div class="uyari">{{signup_form.birthday_required_warning}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 form-group">
+            <input #myPhone type="tel" placeholder={{signup_form.phone}} class="form-control single-field" name="phoneNum"
+              style="color: rgb(0, 0, 0) !important;" [(ngModel)]="registered_user.phone" required #phoneNum="ngModel" />
+            <div *ngIf="phoneNum.invalid && (phoneNum.dirty || phoneNum.touched)">
+              <div *ngIf="phoneNum.errors && phoneNum.errors['required']" class="danger">
+                <div class="uyari">{{signup_form.phone_required_warning}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="text" placeholder={{signup_form.name}} class="form-control single-field" name="firstName"
+              style="color: rgb(0, 0, 0) !important;" [(ngModel)]="registered_user.name" required #name="ngModel" />
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+              <div *ngIf="name.errors && name.errors['required']" class="danger">
+                <div class="uyari">{{signup_form.name_required_warning}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 form-group">
+            <input type="text" placeholder={{signup_form.surname}} class="form-control single-field" name="lastName"
+              style="color: rgb(0, 0, 0) !important;" [(ngModel)]="registered_user.surname" required
+              #lastname="ngModel" />
+            <div *ngIf="lastname.invalid && (name.dirty || lastname.touched)">
+              <div *ngIf="lastname.errors && lastname.errors['required']" class="danger">
+                <div class="uyari">{{signup_form.surname_required_warning}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row">
+  
+          <div class="col-12 form-group">
+            <input type="email" placeholder={{signup_form.email}} class="form-control single-field" name="email"
+              style="color: rgb(0, 0, 0) !important;" [(ngModel)]="registered_user.email" required email
+              #email="ngModel" />
+            <div *ngIf="email.invalid && (name.dirty || email.touched)">
+              <div class="uyari">{{signup_form.email_required_warning}}</div>
+  
+            </div>
+          </div>
+        </div>
+  
+  
+  
+        <!--
+        <div class="row">
+  
+          <div class="col-12 form-group">
+            <input type="email" placeholder="Email (Tekrar giriniz...)" class="form-control single-field" name="email_once"
+              [(ngModel)]="model.email_once_again" required email_once #email="ngModel" />
+            <div *ngIf="(model.email_once_again!=model.email)">
+              <div class="uyari">{{signup_form.email_required_warning}}</div>
+  
+            </div>
+          </div>
+        </div>
+  -->
+  
+  
+  
+  
+        <div class="row">
+          <div class="col-12 form-group">
+            <input type="password" placeholder={{signup_form.password}} class="form-control single-field" name="password"
+              [(ngModel)]="registered_user.pass" required minlength={{signup_form._password_length}}
+              #password="ngModel" />
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+              <div *ngIf="password.errors && password.errors['required']" class="danger">
+                <div class="uyari">{{signup_form.password_required_warning}}</div>
+              </div>
+              <div *ngIf="password.errors && password.errors['minlength']" class="danger">
+                <div class="uyari">{{signup_form.password_minLength_warning}}</div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+  
+        <div class="row">
+  
+          <div class="col-12 form-group">
+            <input type="password" placeholder={{signup_form.password_again}} class="form-control single-field"
+              name="password_once_again" [(ngModel)]="registered_user.password_once_again" required
+              #password_once="ngModel" />
+  
+            <div *ngIf="(password_once.dirty || password_once.touched)">
+              <div *ngIf="password_once.errors && password_once.errors['required']" class="danger">
+                <div class="uyari">{{signup_form.password_required_again_warning}}</div>
+              </div>
+  
+  
+            </div>
+            <div *ngIf="(registered_user.password_once_again!=registered_user.pass)">
+              <div class="uyari">{{signup_form.passwords_need_to_be_same_warning}}</div>
+            </div>
+          </div>
+        </div>
+  
+  
+  
+  
+  
+        <div class="col-md-12 form-group">
+          <div class="row" style="display: flex;align-items: center;">
+            <div class="col-md-2">
+              <mat-checkbox class="checkbox-register-form" [(ngModel)]="custom_checkbox.is_checked"
+                [color]="custom_checkbox.color" name="accept-terms"></mat-checkbox>
+            </div>
+            <div class="col-md-10">
+              <h4 class="terms-condition">{{signup_form._accept_terms_pre_text}}<a href="#"
+                  class="alticizili">{{signup_form.accept_terms_link_part}}</a>{{signup_form._accept_terms_pos_text}}
+              </h4>
+            </div>
+          </div>
+        </div>
+  
+  
+        <div class="form-group">
+          <button #sendButt
+            [disabled]="!custom_checkbox.is_checked || reference_id.errors || password.errors || email.errors || lastname.errors || name.errors || phoneNum.errors || birthDay.errors || password_once.errors || registered_user.password_once_again!=registered_user.pass"
+            class="col-12 submit-btn btn btn-primary"
+            style="background-position: 0 1px !important;">{{signup_form.register_button_text}}</button>
+        </div>
+  
+      </div>
+  
+    
+  
+    </form>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!--
+  
+    <div class="jumbotron my-container" >
+      <div class="container">
+        <div class="ortala row">
+          <div class="col-md-6">
+  
+  
+  
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- main app container 
+  <main>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="ortala row">
+        <div class="col-md-8 offset-md-2">
+  
+          
+  
+          <div class="signup-form-wrapper">
+            <h3 class="create-acc text-center">{{signup_form.tag}}</h3>
+            <div class="signup-inner text-center">
+              <h5 class="title">{{signup_form.text_on_form_header}}</h5>
+              
+  
+              <form name="form" class="signup-inner--form" (ngSubmit)="onSubmit()" #register="ngForm" novalidate>
+                <div class="row">
+  
+                  <div class="row">
+                    <div class="col-md-3 form-group">
+                      </div>
+                    <div class="col-md-6 form-group">
+                    <input type="text" placeholder={{signup_form.reference_id}} class="form-control single-field" name="reference_id"
+                      [(ngModel)]="model.reference_id" required #reference_id="ngModel" />
+                    </div>
+                    <div class="col-md-3 form-group">
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="date" placeholder={{signup_form.birthday}} class="form-control single-field" name="birthDay"
+                        [(ngModel)]="model.birthDay" required #birthDay="ngModel" />
+                      <div *ngIf="(birthDay.touched)">
+                        <div *ngIf="birthDay.errors && birthDay.errors['required']" class="danger">
+                          <div class="uyari">{{signup_form.birthday_required_warning}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="tel" placeholder={{signup_form.phone}} class="form-control single-field" name="phoneNum"
+                        [(ngModel)]="model.phoneNum" required #phoneNum="ngModel" />
+                      <div *ngIf="phoneNum.invalid && (phoneNum.dirty || phoneNum.touched)">
+                        <div *ngIf="phoneNum.errors && phoneNum.errors['required']" class="danger">
+                          <div class="uyari">{{signup_form.phone_required_warning}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" placeholder={{signup_form.name}} class="form-control single-field" name="firstName"
+                        [(ngModel)]="model.firstName" required #name="ngModel" />
+                      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <div *ngIf="name.errors && name.errors['required']" class="danger">
+                          <div class="uyari">{{signup_form.name_required_warning}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="text" placeholder={{signup_form.surname}} class="form-control single-field"
+                        name="lastName" [(ngModel)]="model.lastName" required #lastname="ngModel" />
+                      <div *ngIf="lastname.invalid && (name.dirty || lastname.touched)">
+                        <div *ngIf="lastname.errors && lastname.errors['required']" class="danger">
+                          <div class="uyari">{{signup_form.surname_required_warning}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="col-12 form-group">
+                    <input type="email" placeholder={{signup_form.email}} class="form-control single-field" name="email"
+                      [(ngModel)]="model.email" required email #email="ngModel" />
+                    <div *ngIf="email.invalid && (name.dirty || email.touched)">
+                      <div class="uyari">{{signup_form.email_required_warning}}</div>
+                      
+                    </div>
+                  </div>
+  
+                  <div class="col-12 form-group">
+                    <input type="password" placeholder={{signup_form.password}} class="form-control single-field"
+                      name="password" [(ngModel)]="model.password" required minlength={{signup_form._password_length}}
+                      #password="ngModel" />
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                      <div *ngIf="password.errors && password.errors['required']" class="danger">
+                        <div class="uyari">{{signup_form.password_required_warning}}</div>
+                      </div>
+                      <div *ngIf="password.errors && password.errors['minlength']" class="danger">
+                        <div class="uyari">{{signup_form.password_minLength_warning}}</div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+                  <div class="col-md-12 form-group">
+                    <div class="row" style="display: flex;align-items: center;">
+                      <div class="col-md-2">
+                        <mat-checkbox class="checkbox-register-form" [(ngModel)]="custom_checkbox.is_checked"
+                          [color]="custom_checkbox.color" name="accept-terms"></mat-checkbox>
+                      </div>
+                      <div class="col-md-10">
+                        <h4 class="terms-condition">{{signup_form._accept_terms_pre_text}}<a href="#"
+                            class="alticizili">{{signup_form.accept_terms_link_part}}</a>{{signup_form._accept_terms_pos_text}}
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+                  <div class="form-group">
+                    <button [disabled]="!custom_checkbox.is_checked || password.errors || email.errors || lastname.errors || name.errors || phoneNum.errors || birthDay.errors"
+                      class="col-12 submit-btn btn btn-primary">{{signup_form.register_button_text}}</button>
+                  </div>
+                
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  -->

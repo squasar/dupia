@@ -1,0 +1,222 @@
+<div name="empty item" #klein></div>
+<div class="signup-inner text-center" name="formWithHeader" #formWithHeader>
+  <h5 class="title">{{login_form.text_on_form_header}}</h5>
+
+
+  <form name="form" #form class="signup-inner--form" (ngSubmit)="onSubmit()" #signup="ngForm" novalidate>
+    <div class="row">
+
+      <div class="row">
+
+        <div class="col-12 form-group">
+          <input type="email" placeholder={{login_form.email}} class="form-control single-field" name="email"
+            [(ngModel)]="model.email" (focus)="onFocused()" required email #email="ngModel" />
+          <div *ngIf="email.invalid && (email.dirty || email.touched)">
+            <div class="uyari">{{login_form.email_required_warning}}</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 form-group">
+          <input type="password" placeholder={{login_form.password}} class="form-control single-field" name="password"
+            [(ngModel)]="model.pass" #password="ngModel" />
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password.errors && password.errors['required']" class="danger">
+              <div class="uyari">{{login_form.password_required_warning}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-12 form-group">
+          <a routerLink="/" class="link_alt_ciz" style="color:#154c79">{{login_form.forgot_password_text}}</a>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <button
+          [disabled]="password.errors || email.errors"
+          class="col-12 submit-btn btn btn-primary"
+          style="background-position: 0 1px !important;">{{login_form.login_button_text}}</button>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+  <div class="jumbotron my-container" >
+    <div class="container">
+      <div class="ortala row">
+        <div class="col-md-6">
+
+
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- main app container 
+<main>
+<div class="jumbotron">
+  <div class="container">
+    <div class="ortala row">
+      <div class="col-md-8 offset-md-2">
+
+        
+
+        <div class="login-form-wrapper">
+          <h3 class="create-acc text-center">{{login_form.tag}}</h3>
+          <div class="login-inner text-center">
+            <h5 class="title">{{login_form.text_on_form_header}}</h5>
+            
+
+            <form name="form" class="login-inner--form" (ngSubmit)="onSubmit()" #signup="ngForm" novalidate>
+              <div class="row">
+
+                <div class="row">
+                  <div class="col-md-3 form-group">
+                    </div>
+                  <div class="col-md-6 form-group">
+                  <input type="text" placeholder={{login_form.reference_id}} class="form-control single-field" name="reference_id"
+                    [(ngModel)]="model.reference_id" required #reference_id="ngModel" />
+                  </div>
+                  <div class="col-md-3 form-group">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="date" placeholder={{login_form.birthday}} class="form-control single-field" name="birthDay"
+                      [(ngModel)]="model.birthDay" required #birthDay="ngModel" />
+                    <div *ngIf="(birthDay.touched)">
+                      <div *ngIf="birthDay.errors && birthDay.errors['required']" class="danger">
+                        <div class="uyari">{{login_form.birthday_required_warning}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input type="tel" placeholder={{login_form.phone}} class="form-control single-field" name="phoneNum"
+                      [(ngModel)]="model.phoneNum" required #phoneNum="ngModel" />
+                    <div *ngIf="phoneNum.invalid && (phoneNum.dirty || phoneNum.touched)">
+                      <div *ngIf="phoneNum.errors && phoneNum.errors['required']" class="danger">
+                        <div class="uyari">{{login_form.phone_required_warning}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" placeholder={{login_form.name}} class="form-control single-field" name="firstName"
+                      [(ngModel)]="model.firstName" required #name="ngModel" />
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                      <div *ngIf="name.errors && name.errors['required']" class="danger">
+                        <div class="uyari">{{login_form.name_required_warning}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input type="text" placeholder={{login_form.surname}} class="form-control single-field"
+                      name="lastName" [(ngModel)]="model.lastName" required #lastname="ngModel" />
+                    <div *ngIf="lastname.invalid && (name.dirty || lastname.touched)">
+                      <div *ngIf="lastname.errors && lastname.errors['required']" class="danger">
+                        <div class="uyari">{{login_form.surname_required_warning}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 form-group">
+                  <input type="email" placeholder={{login_form.email}} class="form-control single-field" name="email"
+                    [(ngModel)]="model.email" required email #email="ngModel" />
+                  <div *ngIf="email.invalid && (name.dirty || email.touched)">
+                    <div class="uyari">{{login_form.email_required_warning}}</div>
+                    
+                  </div>
+                </div>
+
+                <div class="col-12 form-group">
+                  <input type="password" placeholder={{login_form.password}} class="form-control single-field"
+                    name="password" [(ngModel)]="model.password" required minlength={{login_form._password_length}}
+                    #password="ngModel" />
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors && password.errors['required']" class="danger">
+                      <div class="uyari">{{login_form.password_required_warning}}</div>
+                    </div>
+                    <div *ngIf="password.errors && password.errors['minlength']" class="danger">
+                      <div class="uyari">{{login_form.password_minLength_warning}}</div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12 form-group">
+                  <div class="row" style="display: flex;align-items: center;">
+                    <div class="col-md-2">
+                      <mat-checkbox class="checkbox-signup-form" [(ngModel)]="custom_checkbox.is_checked"
+                        [color]="custom_checkbox.color" name="accept-terms"></mat-checkbox>
+                    </div>
+                    <div class="col-md-10">
+                      <h4 class="terms-condition">{{login_form._accept_terms_pre_text}}<a href="#"
+                          class="alticizili">{{login_form.accept_terms_link_part}}</a>{{login_form._accept_terms_pos_text}}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <button [disabled]="!custom_checkbox.is_checked || password.errors || email.errors || lastname.errors || name.errors || phoneNum.errors || birthDay.errors"
+                    class="col-12 submit-btn btn btn-primary">{{login_form.signup_button_text}}</button>
+                </div>
+              
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+-->

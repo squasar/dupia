@@ -1,0 +1,168 @@
+<div class="container-fluid">
+
+
+    <!--<span class="span-item" *ngFor='let d of getKeys(allFriends)' (click)='loadDoc(d)'>-->
+
+<div class="row">
+        <div class="col-md-12">
+            <div class="card post_box">
+                <div class="card-header py-2">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="../../../assets/profile_picture_none.jpg"
+                                class="img-fluid card-img-top post_card_image" alt="..." #postImageProfile>
+                        </div>
+                        <div class="col-md-8 pt-3" style="padding-left:0% !important; ">
+                            <p class="pt-3"
+                                style="display:flex; justify-content: start; margin-left:-20px; font-size: 28px;">
+                                {{user_name}}<span style="padding-left: 22px;">
+                                    {{user_surname}}
+                                </span></p>
+                        </div>
+
+                        <div class="col-md-2" style="padding-right:100%; padding-top:20px;">
+
+                            <ng-container *ngIf="isPostMine; then postOnMine; else postNotMine">
+                            </ng-container>
+
+                            <ng-template #postOnMine>
+                                <mat-form-field appearance="outline">
+                                    <!--<mat-label>{{choosenPrivacy?.name}}</mat-label>-->
+                                    <mat-label style="display:flex;align-items: center;">
+                                        <mat-icon aria-hidden="false" style="height:auto;">
+                                            <img
+                                                src="https://database.gen.tr/suleyman/2022/dupia_test/privacy_icons/{{choosenPrivacy?.code}}.svg">
+                                        </mat-icon>
+                                        <span style="padding-left: 16px;">
+                                            {{choosenPrivacy?.name}}
+                                        </span>
+
+                                    </mat-label>
+                                    <mat-select [(value)]="choosenPrivacy"
+                                        (selectionChange)="privacyChanged($event.value)" name="list-privacy"
+                                        style="display:flex;align-items: center;">
+                                        <mat-option *ngFor="let privacy_option of getPrivacyOptionsList()"
+                                            value="{{privacy_option.code}}">
+                                            <mat-icon aria-hidden="false"
+                                                style="height:auto;margin-right:25px;text-align: center !important;">
+                                                <img
+                                                    src="https://database.gen.tr/suleyman/2022/dupia_test/privacy_icons/{{privacy_option.code}}.svg">
+                                            </mat-icon>{{privacy_option.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </ng-template>
+
+                            <ng-template #postNotMine>
+                                <span></span>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body py-2" style="height:300px;  overflow-y: scroll;">
+                    <ng-container *ngIf="isTextExist; then textAddedOnPost; else noTextAddedOnPost">
+                    </ng-container>
+                    <ng-template #textAddedOnPost>
+                        <p></p><span #postedTextArea>{{post_text_content}}</span> <br>
+                    </ng-template>
+                    <ng-template #noTextAddedOnPost>
+                        <span></span>
+                    </ng-template>
+                    <ng-container *ngIf="isPhotoExist; then photoAddedOnPost; else noPhotoAddedOnPost">
+                    </ng-container>
+
+                    <ng-template #photoAddedOnPost>
+                        <img src="../../../assets/profile_picture_none.jpg"
+                            class="img-fluid card-img-top image-upload-container btn btn-bwm" alt="..."
+                            style="width:50% !important; height:100% !important; padding-top: 4px !important;"
+                            #postedContentImage>
+                    </ng-template>
+
+                    <ng-template #noPhotoAddedOnPost>
+                        <span></span>
+                    </ng-template>
+
+                </div>
+
+
+                <div class="card-footer inside_post_box_top">
+
+                    <div class="row py-1" style="height:90% !important;">
+
+                        <div class="col-md-4">
+                            <button class=" btn btn-secondary" (click)="likeOnClicked()"
+                                style="width: 100% !important;">{{likeButtonText}} 
+                                ({{totalLikes}})</button>
+                        </div>
+
+
+                        <div class="col-md-4 px-2">
+                            <button class=" btn btn-secondary" (click)="commentOnClicked()"
+                                style="width: 100% !important;">{{commentButtonText}} 
+                                ({{totalComments}})</button>
+                        </div>
+
+                        <div class="col-md-4">
+                            <button class=" btn btn-secondary" (click)="unshareOnClicked()"
+                                style="width: 100% !important;">{{unshareButtonText}} 
+                                ({{totalShares}})</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row" style="height:10% !important;">
+
+                        <ng-container *ngIf="isSeeCommentsActive; then seeComments; else noSeeComments">
+                        </ng-container>
+
+
+
+                        <ng-template #noSeeComments>
+
+                            <div class="col-md-5" style="display:flex; justify-content: space-around;">
+                                <span></span>
+                            </div>
+
+                            <div class="col-md-2"
+                                style="color:blue; display:flex; justify-content: space-around; cursor:pointer; text-decoration: underline;">
+                                <p></p><span (click)="changeSeeCommentsStatus()">{{seeCommentsText}}...</span> <br>
+                            </div>
+
+                            <div class="col-md-5" style="display:flex; justify-content: space-around;">
+                                <span></span>
+                            </div>
+                        </ng-template>
+
+
+
+                        <ng-template #seeComments>
+
+                            <div class="col-md-5" style="display:flex; justify-content: space-around;">
+                                <span></span>
+                            </div>
+
+                            <div class="col-md-2"
+                                style="color:blue; display:flex; justify-content: space-around; cursor:pointer;">
+                                <p></p><span (click)="changeSeeCommentsStatus()">...</span> <br>
+                            </div>
+
+                            <div class="col-md-5" style="display:flex; justify-content: space-around;">
+                                <span></span>
+                            </div>
+
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!--</span>-->
+
+
+
+
+
+</div>

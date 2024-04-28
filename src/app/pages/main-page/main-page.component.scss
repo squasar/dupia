@@ -1,0 +1,279 @@
+body * {
+  //padding: 0 !important;
+  //margin: 0 !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.text-css {
+
+  @keyframes tawkMaxOpen {
+    0% {
+      opacity: 0;
+      transform: translate(0, 30px);
+      ;
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+
+  @-moz-keyframes tawkMaxOpen {
+    0% {
+      opacity: 0;
+      transform: translate(0, 30px);
+      ;
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+
+  @-webkit-keyframes tawkMaxOpen {
+    0% {
+      opacity: 0;
+      transform: translate(0, 30px);
+      ;
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+
+  #dchl5e52kvp1669806700296.open {
+    animation: tawkMaxOpen .25s ease !important;
+  }
+
+  @keyframes tawkMaxClose {
+    from {
+      opacity: 1;
+      transform: translate(0, 0px);
+      ;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate(0, 30px);
+      ;
+    }
+  }
+
+  @-moz-keyframes tawkMaxClose {
+    from {
+      opacity: 1;
+      transform: translate(0, 0px);
+      ;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate(0, 30px);
+      ;
+    }
+  }
+
+  @-webkit-keyframes tawkMaxClose {
+    from {
+      opacity: 1;
+      transform: translate(0, 0px);
+      ;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate(0, 30px);
+      ;
+    }
+  }
+
+  #dchl5e52kvp1669806700296.closed {
+    animation: tawkMaxClose .25s ease !important
+  }
+
+  @media only screen and (max-width: 991px) {
+
+    .banner h1,
+    .banner h1 span {
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+
+
+
+}
+
+
+
+
+.banner h1 {
+  font-size: 90px;
+}
+
+.banner h1 span {
+  font-size: 90px;
+  font-weight: 900;
+}
+
+
+
+.slider h1 {
+  font-size: 50px;
+}
+
+.slider h1 span {
+  font-size: 55px;
+  font-weight: 900;
+}
+
+section {
+  padding: 100px 0px;
+}
+
+.icon-content {
+  padding: 44px 0px;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.icon-content i {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.icon-content p {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.icon-content p span {
+  font-weight: 300;
+}
+
+.number {
+  font-size: 120px;
+  font-weight: 800;
+  color: #d0d0d0;
+  line-height: initial;
+}
+
+.subtitle {
+  font-size: 32px !important;
+  font-weight: 200;
+}
+
+.subtitle span {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+}
+
+@media only screen and (max-width: 991px) {
+
+  .banner h1,
+  .banner h1 span {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .slider h1,
+  .slider h1 span {
+    font-size: 30px;
+  }
+
+  .subtitle,
+  .subtitle span {
+    font-size: 25px !important;
+    font-weight: 200;
+  }
+
+  .text-content {
+    text-align: center;
+  }
+
+  .btn-content {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+
+#u5ucft4gv2t81669806699936 {
+  outline: none !important;
+  visibility: visible !important;
+  resize: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  background: none !important;
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity 1) !important;
+  -mz-opacity: 1 !important;
+  -khtml-opacity: 1 !important;
+  top: auto !important;
+  right: 0px !important;
+  bottom: 0px !important;
+  left: auto !important;
+  position: fixed !important;
+  border: 0 !important;
+  min-height: 0px !important;
+  min-width: 0px !important;
+  max-height: none !important;
+  max-width: none !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  -moz-transition-property: none !important;
+  -webkit-transition-property: none !important;
+  -o-transition-property: none !important;
+  transition-property: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  display: none !important;
+  z-index: 2000000000 !important;
+  background-color: transparent !important;
+  cursor: none !important;
+  float: none !important;
+  border-radius: unset !important;
+  pointer-events: auto !important;
+  clip: auto !important;
+  color-scheme: light !important;
+}
+
+#u5ucft4gv2t81669806699936.widget-hidden {
+  display: none !important;
+}
+
+#u5ucft4gv2t81669806699936.widget-visible {
+  display: block !important;
+}
+
+@media print {
+  #u5ucft4gv2t81669806699936.widget-visible {
+    display: none !important;
+  }
+}
+
+@keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}
+@-moz-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}
+@-webkit-keyframes tawkMaxOpen{0%{opacity:0;transform:translate(0, 30px);;}to{opacity:1;transform:translate(0, 0px);}}
+#dchl5e52kvp1669806700296.open{animation : tawkMaxOpen .25s ease!important;}
+@keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}
+@-moz-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}
+@-webkit-keyframes tawkMaxClose{from{opacity: 1;transform:translate(0, 0px);;}to{opacity: 0;transform:translate(0, 30px);;}}
+#dchl5e52kvp1669806700296.closed{animation: tawkMaxClose .25s ease!important}
+
+
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */

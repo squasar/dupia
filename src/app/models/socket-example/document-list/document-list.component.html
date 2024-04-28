@@ -1,0 +1,27 @@
+<div class='sidenav'>
+    <span (click)='newDoc()'>
+      New Document
+    </span>
+  
+    <span *ngFor='let d of getKeys(allDocs)'  (click)='loadDoc(d)' >
+      {{ d }}
+    </span>
+  
+    <!--
+    <span [class.selected]='docId === class.id' 
+    (click)='loadDoc(docId)' 
+    *ngFor='let d of getKeys(allDocs)'>
+      {{ d }}
+    </span>
+    -->
+    
+  
+    <!--  <span
+        [class.selected]='docId === currentDoc'
+        (click)='loadDoc(docId)'
+        *ngFor='let docId of documents | async'
+      >
+      
+      {{ docId }}
+      </span>-->
+  </div>

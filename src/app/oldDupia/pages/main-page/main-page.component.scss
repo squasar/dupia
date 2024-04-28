@@ -1,0 +1,120 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    line-height: 1.2 !important;
+}
+
+.banner h1 {
+    font-size: 90px;
+}
+
+.banner h1 span {
+    font-size: 90px;
+    font-weight: 900;
+}
+
+.mTextCenter{
+    text-align: center!important;
+}
+
+
+.slider h1 {
+    font-size: 50px;
+}
+
+.slider h1 span {
+    font-size: 55px;
+    font-weight: 900;
+}
+
+section {
+    padding: 100px 0px;
+}
+
+.icon-content {
+    padding: 44px 0px;
+    text-align: center;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.icon-content i {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.icon-content p {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.icon-content p span {
+    font-weight: 300;
+}
+
+.number {
+    font-size: 120px;
+    font-weight: 800;
+    color: #d0d0d0;
+    line-height: initial;
+}
+
+.subtitle {
+    font-size: 32px !important;
+    font-weight: 200;
+}
+
+.subtitle span {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+}
+
+@media  only screen and (max-width: 991px) {
+
+    .banner h1,
+    .banner h1 span {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .slider h1,
+    .slider h1 span {
+        font-size: 30px;
+    }
+
+    .subtitle,
+    .subtitle span {
+        font-size: 25px !important;
+        font-weight: 200;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    .btn-content {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//line-height: 1.2 !important;

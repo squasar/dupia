@@ -1,0 +1,48 @@
+<!--color="primary"
+
+#2b4354
+#a7bac6
+-->
+
+<div class="container-fluid">
+    <div class="row">
+        <mat-toolbar style="color:#5243c4; background-color: #a7bac6; margin-top: 0% !important;">
+            <div class="col-md-11" style="display:flex;justify-content: end;">
+                <app-manage-language></app-manage-language>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="row">
+    
+
+        <span style="/* max-width: 150px; */position: absolute;left: 10px;top: 50px;z-index: 999;width: 250px;">
+            <a class="brand-logo" routerLink="/"><img src="assets/logo_svg.svg" class="img-fluid" style="background-color: #a7bac6;width: 100%;"></a>
+        </span>
+        <mat-toolbar style="color:#5243c4; background-color: #a7bac6;">
+            <div class="col-md-1" style="display: flex;justify-content: space-around;">
+                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                    <mat-icon></mat-icon>
+                </button>
+                
+            </div>
+            <div class="col-md-10" style="display:flex;justify-content: end;">
+                <section>
+                    <div class="example-button-row">
+                      <button mat-raised-button (click)="openDialogLogin('0ms', '0ms', $event)" style="color: #334586; width: 120px; margin-top: 20%;">{{signup_login_buttons.login_button_text}}</button>
+                      <button mat-raised-button (click)="openDialogSignup('0ms', '0ms', $event)" style="color: #334586; width: 120px; margin-left: 20%; margin-top: 20%;">{{signup_login_buttons.signup_button_text}}</button>  
+                    </div>
+                  </section>
+            </div>
+        </mat-toolbar>
+    </div>
+
+    <div class="row">
+        <mat-toolbar style="color:#5243c4; background-color: #a7bac6; margin-top: -1.5% !important;">
+            <div class="col-md-11" style="display:flex;justify-content: end;">
+                
+            </div>
+        </mat-toolbar>
+    </div>
+
+</div>

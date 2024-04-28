@@ -1,0 +1,57 @@
+<div class='sidenav' style="overflow-y: scroll; width:23%;">
+
+  <span class="span-item" *ngFor='let d of getKeys(allFriends)' (click)='loadDoc(d)'>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 px-1">
+          <ng-container *ngIf="d.pp_path != 'NONE'; 
+                    then postHasPhoto; 
+                    else postHasNoPhoto">
+          </ng-container>
+          <ng-template #postHasPhoto>
+            <img src={{d.pp_path}}
+                                class="img-fluid card-img-top friend_item_image" alt="...">
+          </ng-template>
+          <ng-template #postHasNoPhoto>
+            <img src="../../../../assets/profile_picture_none.jpg"
+                                class="img-fluid card-img-top friend_item_image" alt="...">
+                        
+          </ng-template>
+        </div>
+        <div class="col-md-7 px-1" style="left:0;">
+          <span>{{ d.u_name + "  " + d.u_surname }}</span>
+        </div>
+        <div class="col-md-2">
+          
+          <span class="dot" [ngStyle]="{'visibility': d.isVisible == true ? 'visible' : 'hidden' }"></span>
+          
+          <!--<ng-container *ngIf="(d.hasNotification != 0); 
+                    then yesNotification; 
+                    else noNotification">
+          </ng-container>
+          <ng-template #yesNotification>
+            <span class="dot" style="visibility:visible" #{{d.chat_id}}></span>
+          </ng-template>
+          <ng-template #noNotification>
+            <span class="dot" style="visibility:hidden" #{{d.chat_id}}></span>
+          </ng-template>-->
+        
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </span>
+
+  <!--
+  <span *ngFor='let d of getKeys(allDocs)'  (click)='loadDoc(d)' >
+      {{ d }}
+  </span>
+  -->
+</div>

@@ -1,0 +1,20 @@
+.auth-buttons .auth-button:hover {
+    box-shadow: 0px 0px 30px #efefef;
+}
+
+.auth-buttons .auth-button {
+    box-shadow: 0px 0px 15px #efefef;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15%;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-buttons .auth-button .span:first {
+    width: 22px;
+}

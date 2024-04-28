@@ -1,0 +1,391 @@
+.uyari{
+    color: #dc4734;
+}
+.ortala{
+    display: flex;
+    justify-content: center;
+}
+.alticizili { text-decoration: underline; }
+
+.checkbox-register-form {
+    margin: 0 10px;
+  }
+
+.link_alt_ciz:hover{
+    text-decoration: underline !important;
+}
+
+
+
+.signup-form-wrapper .create-acc {
+    color: #3e5d8c;
+    font-size: 30px;
+    font-weight: 800;
+    padding-bottom: 47px;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .signup-form-wrapper .create-acc {
+        font-size: 26px;
+    }
+}
+
+.signup-inner {
+    max-width: 572px;
+    margin: auto;
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.signup-inner .title {
+    color: #fff;
+    font-size: 22px;
+    background-color: #3e5d8c;
+    padding: 23px 0;
+}
+
+.signup-inner--form {
+    padding: 42px 100px 50px;
+    background-color: #fff;
+    position: relative;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199.98px),
+only screen and (min-width: 768px) and (max-width: 991.98px),
+only screen and (max-width: 767.98px) {
+    .signup-inner--form {
+        padding: 42px 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 479.98px) {
+    .signup-inner--form {
+        padding: 42px 30px 50px;
+    }
+}
+
+.signup-inner--form:before {
+    top: 50%;
+    left: 50%;
+    content: '';
+    position: absolute;
+    height: 170px;
+    width: 174px;
+    /*background-image: url("/dupia/src/app/assets/images/icons/logo.png");*/
+    background-repeat: no-repeat;
+    -webkit-transform: translate(-50%, -80%);
+    -ms-transform: translate(-50%, -80%);
+    transform: translate(-50%, -80%);
+}
+
+.signup-inner--form .single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #999;
+    padding: 5px 10px;
+    margin-bottom: 28px;
+}
+
+.signup-inner--form .nice-select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+    font-size: 13px;
+    padding: 5px 10px;
+    height: 34px;
+    line-height: 30px;
+    margin-bottom: 27px;
+    background-color: transparent;
+}
+
+.signup-inner--form .nice-select span {
+    color: #999;
+}
+
+.signup-inner--form .nice-select:after {
+    height: 6px;
+    width: 6px;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.signup-inner--form .nice-select .list {
+    width: 100%;
+}
+
+.signup-inner .terms-condition {
+    font-size: 16px;
+    padding-top: 28px;
+}
+
+.signup-inner .terms-condition a {
+    color: #3e5d8c;
+}
+
+.submit-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    padding: 15px 20px;
+    display: block;
+    border: 1px solid transparent;
+    background-color: #3e5d8c;
+    width: 100%;
+    margin-top: 23px;
+}
+
+
+
+.signup-form-wrapper .create-acc {
+    color: #3e5d8c;
+    font-size: 30px;
+    font-weight: 800;
+    padding-bottom: 47px;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .signup-form-wrapper .create-acc {
+        font-size: 26px;
+    }
+}
+
+.signup-inner--form .single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #999;
+    padding: 5px 10px;
+    margin-bottom: 28px;
+}
+
+.login-area .single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .login-area .single-field {
+        margin-bottom: 30px;
+    }
+}
+
+.signup-inner .terms-condition {
+    font-size: 16px;
+    padding-top: 28px;
+}
+
+.signup-inner .terms-condition a {
+    color: #3e5d8c;
+}
+
+.my-container{
+    background-color: transparent !important;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.uyari{
+    color: #dc4734;
+}
+.ortala{
+    display: flex;
+    justify-content: center;
+}
+.alticizili { text-decoration: underline; }
+
+.checkbox-register-form {
+    margin: 0 10px;
+  }
+
+
+
+.signup-form-wrapper .create-acc {
+    color: #3e5d8c;
+    font-size: 30px;
+    font-weight: 800;
+    padding-bottom: 47px;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .signup-form-wrapper .create-acc {
+        font-size: 26px;
+    }
+}
+
+.signup-inner {
+    max-width: 572px;
+    margin: auto;
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.signup-inner .title {
+    color: #fff;
+    font-size: 22px;
+    background-color: #3e5d8c;
+    padding: 23px 0;
+}
+
+.signup-inner--form {
+    padding: 42px 100px 50px;
+    background-color: #fff;
+    position: relative;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199.98px),
+only screen and (min-width: 768px) and (max-width: 991.98px),
+only screen and (max-width: 767.98px) {
+    .signup-inner--form {
+        padding: 42px 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 479.98px) {
+    .signup-inner--form {
+        padding: 42px 30px 50px;
+    }
+}
+
+.signup-inner--form:before {
+    top: 50%;
+    left: 50%;
+    content: '';
+    position: absolute;
+    height: 170px;
+    width: 174px;
+    /*background-image: url("/dupia/src/app/assets/images/icons/logo.png");
+    background-repeat: no-repeat;
+    -webkit-transform: translate(-50%, -80%);
+    -ms-transform: translate(-50%, -80%);
+    transform: translate(-50%, -80%);
+}
+
+.signup-inner--form .single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #999;
+    padding: 5px 10px;
+    margin-bottom: 28px;
+}
+
+.signup-inner--form .nice-select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #999;
+    border-radius: 0;
+    font-size: 13px;
+    padding: 5px 10px;
+    height: 34px;
+    line-height: 30px;
+    margin-bottom: 27px;
+    background-color: transparent;
+}
+
+.signup-inner--form .nice-select span {
+    color: #999;
+}
+
+.signup-inner--form .nice-select:after {
+    height: 6px;
+    width: 6px;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.signup-inner--form .nice-select .list {
+    width: 100%;
+}
+
+.signup-inner .terms-condition {
+    font-size: 16px;
+    padding-top: 28px;
+}
+
+.signup-inner .terms-condition a {
+    color: #3e5d8c;
+}
+
+.submit-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    padding: 15px 20px;
+    display: block;
+    border: 1px solid transparent;
+    background-color: #3e5d8c;
+    width: 100%;
+    margin-top: 23px;
+}
+
+.submit-btn:hover {
+    background-color: #333333;
+}
+
+.signup-form-wrapper .create-acc {
+    color: #3e5d8c;
+    font-size: 30px;
+    font-weight: 800;
+    padding-bottom: 47px;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .signup-form-wrapper .create-acc {
+        font-size: 26px;
+    }
+}
+
+.signup-inner--form .single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #999;
+    padding: 5px 10px;
+    margin-bottom: 28px;
+}
+
+.login-area .single-field {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .login-area .single-field {
+        margin-bottom: 30px;
+    }
+}
+
+.signup-inner .terms-condition {
+    font-size: 16px;
+    padding-top: 28px;
+}
+
+.signup-inner .terms-condition a {
+    color: #3e5d8c;
+}
+
+*/
