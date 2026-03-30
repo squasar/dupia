@@ -96,9 +96,7 @@ The presence of Angular service worker integration indicates that the project wa
 
 ## Why this repo is meaningful
 
-This repo is meaningful because it shows more than “I created an Angular project.”
-
-It shows:
+This repo is meaningful because it shows:
 - a real application structure
 - multiple feature domains
 - component organization beyond a trivial demo
