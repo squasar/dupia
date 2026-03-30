@@ -2,15 +2,8 @@
 
 An Angular-based social/community web application prototype with real-time and collaborative features.
 
-This project is more than a default Angular starter. It includes a structured frontend application with:
-
-- authentication-related flows
-- multiple user-facing pages
-- profile/network-oriented UI
-- chat features
-- collaborative document/socket modules
-- internationalization support
-- service worker integration
+This project is the **frontend counterpart** of the `backend_two` repository.  
+The frontend connects to a Socket.IO backend for collaborative document features and appears designed to work with the broader user/chat/content APIs exposed by that backend.
 
 It is best understood as an evolving frontend product prototype rather than a finished production application.
 
@@ -23,8 +16,28 @@ The app appears to target a social, networking, or community-style experience, c
 - profile/network views
 - messaging/chat
 - post/timeline-oriented UI
-- collaborative document experiments
+- collaborative document features
 - multilingual support
+
+The current codebase shows both active UI flows and some transitional/in-progress sections.
+
+## Relationship to `backend_two`
+
+This repository is intended to work with the `backend_two` project:
+
+- the frontend opens a Socket.IO connection to `http://localhost:4444`
+- it emits events such as:
+  - `getAllDocs`
+  - `getDoc`
+  - `addDoc`
+  - `editDoc`
+
+Those same events are implemented on the backend side in `backend_two`, which runs Socket.IO on port `4444` and returns document data to connected clients.
+
+So the cleanest way to describe this repo is:
+
+**`dupia` = frontend client**  
+**`backend_two` = backend / API / real-time server**
 
 ## Main technologies
 
@@ -49,7 +62,7 @@ The repo includes several application pages and routed views such as:
 - profile
 - network-related pages
 
-Some routes are currently active, while others are still present in the codebase as part of a larger application direction.
+Some routes are currently active, while others remain in the codebase as part of a larger intended application scope.
 
 ### 2. Authentication and session logic
 The app includes:
@@ -83,39 +96,50 @@ The presence of Angular service worker integration indicates that the project wa
 
 ## Why this repo is meaningful
 
-This repo is meaningful because it shows:
+This repo is meaningful because it shows more than “I created an Angular project.”
+
+It shows:
 - a real application structure
 - multiple feature domains
 - component organization beyond a trivial demo
 - frontend integration with real-time systems
 - early product-oriented thinking
+- a clear relationship to a separate backend service
 
 The strongest signal is not visual polish, but architectural scope.
 
 ## Limitations
 
-- The current README does not describe the actual project at all.
 - Some parts of the application appear unfinished or partially disabled.
 - Not every declared component has equally deep business logic yet.
 - Some routes/features suggest an in-progress migration or redesign.
-- Public presentation is currently much weaker than the actual codebase.
+- Public presentation may still be weaker than the actual codebase unless screenshots and setup notes are added.
+
+## Local development
+
+This frontend is intended to run alongside its backend counterpart.
+
+Typical setup idea:
+
+1. start the `backend_two` server
+2. ensure Socket.IO is available on `http://localhost:4444`
+3. start the Angular frontend with `ng serve`
 
 ## Best way to interpret this repository
 
 This is best presented as:
 
-**an Angular social/community frontend prototype with real-time collaboration and chat-oriented features**
+**an Angular social/community frontend prototype with real-time collaboration and chat-oriented features, designed to work with the `backend_two` backend**
 
 rather than as a generic Angular sample.
 
 ## Future improvements
 
-- document the intended product vision clearly
 - explain active vs. planned features
-- document backend expectations / socket endpoints
 - clean up unused or transitional routes/components
-- add screenshots or a simple architecture overview
+- add screenshots
 - clarify old vs. new sections of the app if both are intentionally kept
+- document expected backend endpoints and environment setup
 
 ## Summary
 
@@ -129,28 +153,4 @@ rather than as a generic Angular sample.
 - internationalization support
 - PWA/service-worker setup
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+It is best understood as the frontend side of a broader social/community product prototype paired with `backend_two`.
